@@ -1,5 +1,3 @@
-
-
 class StringSet {
   static String uname = 'Om Chavan';
   static String why = 'Why';
@@ -7,6 +5,11 @@ class StringSet {
   static String about = 'About';
   static String careers = 'Careers';
   static String quantumButton = 'GET QUANTUM';
+  static String thinkQuantum = "Think quantum";
+  static String home = '* HOME';
+  static String machine = '* MACHINE';
+  static String numbers = '* NUMBERS';
+  static String thinking = '* THINKING';
 }
 
 class UrlSet {
