@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:toggle_switch/toggle_switch.dart';
+import 'package:flutter/rendering.dart';
 import 'package:style_guide_module/utils/colors.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:style_guide_module/utils/variableSet.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +12,8 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
   List<String> navBarItems = [
     StringSet.home,
     StringSet.machine,
@@ -197,14 +199,20 @@ class _HomePageState extends State<HomePage> {
             Positioned(
               top: dimentions.height / 2.5,
               left: dimentions.width / 5.5,
-              child: Text(
-                StringSet.thinkQuantum,
-                style: TextStyle(
-                  fontFamily: 'Objektiv-Mk3-Medium',
-                  fontWeight: FontWeight.bold,
-                  color: Coolors.canvasColor,
-                  fontSize: dimentions.width * 0.085,
-                ),
+              child: AnimatedTextKit(
+                isRepeatingAnimation: false,
+                animatedTexts: [
+                  TyperAnimatedText(
+                    StringSet.thinkQuantum,
+                    speed: Duration(milliseconds: 100),
+                    textStyle: TextStyle(
+                      fontFamily: 'Objektiv-Mk3-Medium',
+                      fontWeight: FontWeight.bold,
+                      color: Coolors.canvasColor,
+                      fontSize: dimentions.width * 0.085,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
