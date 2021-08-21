@@ -1,4 +1,4 @@
-# style_guide_module
+# rigetti_web_in_flutter
 
 A new Flutter project.
 
